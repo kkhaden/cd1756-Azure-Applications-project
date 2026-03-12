@@ -2,6 +2,7 @@
 Routes and views for the flask application.
 """
 
+from cmath import log
 from datetime import datetime
 from flask import render_template, flash, redirect, request, session, url_for
 from werkzeug.urls import url_parse
@@ -19,6 +20,16 @@ imageSourceUrl = 'https://'+ app.config['BLOB_ACCOUNT']  + '.blob.core.windows.n
 @app.route('/home')
 @login_required
 def home():
+    log = request.values.get('log_button')
+    if log:
+        if log == 'info':
+            app.logger.info('No Issue')
+        elif log == 'warning':
+            app.logger.warning('Warning occured')
+        elif log == 'error':
+            app.logger.error('Error occured')
+        elif log == 'critical':
+            app.logger.critical('Critical issue')
     user = User.query.filter_by(username=current_user.username).first_or_404()
     posts = Post.query.all()
     return render_template(
