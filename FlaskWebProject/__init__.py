@@ -7,8 +7,8 @@ from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_session import Session
-from flask import flash, render_template, redirect, request
-from FlaskWebProject import app
+#from flask import flash, render_template, redirect, request
+#from FlaskWebProject import app
 
 app = Flask(__name__)
 app.config.from_object(Config)
