@@ -15,11 +15,11 @@ app.config.from_object(Config)
 
 
 # Configure logging
-stream_handler = logging.StreamHandler()
-stream_handler.setLevel(logging.WARNING)
+#stream_handler = logging.StreamHandler()
+#stream_handler.setLevel(logging.WARNING)
 
-app.logger.setLevel(logging.WARNING)
-app.logger.addHandler(stream_handler)
+#app.logger.setLevel(logging.WARNING)
+#app.logger.addHandler(stream_handler)
 
     
 
